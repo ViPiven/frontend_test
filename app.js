@@ -1,25 +1,12 @@
 //task 2
 let getMin = (arr) => {
-    let num = arr[0];
-    for (let i = 1; i < arr.length; i++){
-        if (num > arr[i]) {
-            num = arr[i];
-        }
-    }
-    return num;
+    return Math.min.apply(null, arr);
 }
 console.log(getMin([2, 4, 5, 7, 9, 4, 1, 16]))
 
 //task 3
 let getEven = (arr) => {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        let result = arr[i];
-        if(result % 2 === 0) {
-            newArr.push(result);
-        }
-    }
-    return newArr;
+    return arr.filter(num => num % 2 === 0);
 }
 console.log(getEven([2, 4, 5, 7, 9, 4, 1, 16]))
 
@@ -31,12 +18,6 @@ let arr = [
     {name: 'Andrew', birthDate: '2011-05-09'},
 ]
 let searchByName = (str) => {
-    let result = [];
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].name === str) {
-            result.push(arr[i])
-        }
-    }
-    return result;
+    return arr.filter(arr =>  arr.name === str)
 }
 console.log(searchByName('Andrew'));
